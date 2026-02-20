@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On RewriteBase / RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d RewriteRule ^ - [L] RewriteRule ^
+  index.html [L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On ExpiresDefault "access plus 7 days" ExpiresByType text/css
+  "access plus 1 year" ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/* "access plus 1 year"
+</IfModule>
